@@ -180,3 +180,6 @@ src/
 MIT
 
 </div>
+
+## אודות
+Made by Benjy Bodner
