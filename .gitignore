@@ -47,5 +47,5 @@ Thumbs.db
 # Local config
 *.local
 
-# Claude Code
-.claude/
+# Claude Code - include .claude/ but exclude local settings
+.claude/settings.local.json
