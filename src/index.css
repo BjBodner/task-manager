@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-rubik: "Rubik", sans-serif;
+  --color-todo: #6b7280;
+  --color-in-progress: #3b82f6;
+  --color-needs-approval: #f59e0b;
+  --color-done: #22c55e;
+  --color-work: #3b82f6;
+  --color-home: #22c55e;
+  --color-relationships: #ec4899;
+  --color-learning: #8b5cf6;
+}
+
+* {
+  font-family: var(--font-rubik);
+}
+
+body {
+  direction: rtl;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  margin: 0;
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s ease-out;
+}
+
+/* Smooth transitions for task cards */
+.task-card-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Hide completed tasks with nice fade */
+@keyframes fade-check {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.02); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
+.done-task {
+  animation: fade-check 0.5s ease-out;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
